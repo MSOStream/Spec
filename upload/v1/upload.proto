@@ -6,7 +6,9 @@ import "google/api/annotations.proto";
 
 option go_package = "msostream/upload;upload";
 
-message UploadURLRequest {}
+message UploadURLRequest {
+    string id = 1;
+}
 
 message UploadURLResponse {
     string url = 1;
