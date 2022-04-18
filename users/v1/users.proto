@@ -6,13 +6,13 @@ import "google/api/annotations.proto";
 
 option go_package = "msostream/gate;gate";
 
-message RegisterUserRequest {
+message RegisterRequest {
     string name = 1;
     string email = 2;
     string password = 3;
 }
 
-message RegisterUserResponse {
+message RegisterResponse {
     enum Result {
         RESULT_UNSPECIFIED = 0;
         RESULT_ACCEPTED = 1;
@@ -29,7 +29,7 @@ message LoginRequest {
 message LoginResponse {}
 
 service UserService {
-  rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse) {
+  rpc Register(RegisterRequest) returns (RegisterResponse) {
       option (google.api.http) = {
           post: "/v1/users"
       };
