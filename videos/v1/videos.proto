@@ -10,6 +10,7 @@ enum Visibility {
     PUBLIC = 0;
     PRIVATE = 1;
     PROCESSING = 2;
+    DRAFT = 3;
 }
 
 message Video {
