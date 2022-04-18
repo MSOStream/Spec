@@ -51,17 +51,17 @@ message UpdateVideoResponse {
 service VideoService {
   rpc CreateVideo(CreateVideoRequest) returns (CreateVideoResponse) {
       option (google.api.http) = {
-          post: "/v1/video"
+          post: "/v1/videos"
       };
   }
   rpc UpdateVideo(UpdateVideoRequest) returns (UpdateVideoResponse) {
       option (google.api.http) = {
-          put: "/v1/video/{video.id}"
+          put: "/v1/videos/{video.id}"
       };
   }
   rpc GetVideo(GetVideoRequest) returns (GetVideoResponse) {
       option (google.api.http) = {
-          get: "/v1/video"
+          get: "/v1/videos/{id}"
       };
   }
 }
