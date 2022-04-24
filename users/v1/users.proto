@@ -16,7 +16,6 @@ message RegisterResponse {
     enum Result {
         RESULT_UNSPECIFIED = 0;
         RESULT_ACCEPTED = 1;
-        RESULT_EMAILDUPLICATE = 2;
     }
     Result res = 1;    
 }
