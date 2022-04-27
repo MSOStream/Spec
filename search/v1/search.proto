@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package search.v1;
+
+import "google/api/annotations.proto";
+import "videos/v1/videos.proto";
+
+option go_package = "msostream/gate;gate";
+
+message SearchVideosRequest {
+    string q = 1;
+    uint64 offset = 2;
+    uint64 limit = 3;
+    repeated string filter = 4;
+    repeated string sort = 5;
+}
+
+message VideoHits {
+    repeated videos.v1.Video video = 1;
+}
+
+message SearchVideosResponse {
+    VideoHits hits = 1;
+    uint64 offset = 2;
+    uint64 limit = 3;
+    uint64 nb_hits = 4;
+    bool exhaustive_nb_hits = 5;
+}
+
+service SearchService {
+    rpc SearchVideos(SearchVideosRequest) returns (SearchVideosResponse) {
+        option (google.api.http) = {
+            get: "/v1/search/videos"
+        };
+    }
+}
