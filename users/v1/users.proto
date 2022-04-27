@@ -4,7 +4,7 @@ package users.v1;
 
 import "google/api/annotations.proto";
 
-option go_package = "msostream/gate;gate";
+option go_package = "msostream/search/gen/users/v1";
 
 message RegisterRequest {
     string name = 1;

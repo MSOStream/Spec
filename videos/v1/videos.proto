@@ -4,7 +4,7 @@ package videos.v1;
 
 import "google/api/annotations.proto";
 
-option go_package = "msostream/gate;gate";
+option go_package = "msostream/search/gen/videos/v1";
 
 enum Visibility {
     // Video is uploaded, transcoded and public 

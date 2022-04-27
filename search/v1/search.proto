@@ -3,24 +3,20 @@ syntax = "proto3";
 package search.v1;
 
 import "google/api/annotations.proto";
-import "videos/v1/videos.proto";
+import public "videos/v1/videos.proto";
 
-option go_package = "msostream/gate;gate";
+option go_package = "msostream/search/gen/search/v1";
 
 message SearchVideosRequest {
-    string q = 1;
+    string query = 1;
     uint64 offset = 2;
     uint64 limit = 3;
     repeated string filter = 4;
     repeated string sort = 5;
 }
 
-message VideoHits {
-    repeated videos.v1.Video video = 1;
-}
-
 message SearchVideosResponse {
-    VideoHits hits = 1;
+    repeated videos.v1.Video videos = 1;
     uint64 offset = 2;
     uint64 limit = 3;
     uint64 nb_hits = 4;
