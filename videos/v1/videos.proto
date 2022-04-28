@@ -7,14 +7,15 @@ import "google/api/annotations.proto";
 option go_package = "msostream/search/gen/videos/v1";
 
 enum Visibility {
+    VISIBILITY_UNSPECIFIED = 0;
     // Video is uploaded, transcoded and public 
-    PUBLIC = 0;
+    VISIBILITY_PUBLIC = 1;
     // Video is uploaded, transcoded and private
-    PRIVATE = 1;
+    VISIBILITY_PRIVATE = 2;
     // Video is uploaded, but not transcoded
-    PROCESSING = 2;
+    VISIBILITY_PROCESSING = 3;
     // Video is not uploaded
-    DRAFT = 3;
+    VISIBILITY_DRAFT = 4;
 }
 
 message Video {
