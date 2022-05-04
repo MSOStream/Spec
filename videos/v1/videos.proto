@@ -12,10 +12,16 @@ enum Visibility {
     VISIBILITY_PUBLIC = 1;
     // Video is uploaded, transcoded and private
     VISIBILITY_PRIVATE = 2;
-    // Video is uploaded, but not transcoded
-    VISIBILITY_PROCESSING = 3;
-    // Video is not uploaded
-    VISIBILITY_DRAFT = 4;
+}
+
+enum Status {
+    STATUS_UNSPECIFIED = 0;
+    // Video is available for streaming
+    STATUS_FINISHED = 1;
+    // Video is currently being processed
+    STATUS_PROCESSING = 2;
+    // Video is waiting to be processed
+    STATUS_DRAFT = 3;
 }
 
 message Video {
@@ -25,6 +31,7 @@ message Video {
     string author = 4;
     string date = 5;
     Visibility visibility = 6;
+    Status status = 7;
 }
 
 message CreateVideoRequest {
