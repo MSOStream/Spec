@@ -21,7 +21,9 @@ enum Status {
     // Video is currently being processed
     STATUS_PROCESSING = 2;
     // Video is waiting to be processed
-    STATUS_DRAFT = 3;
+    STATUS_UPLOADED = 3;
+    // Video is waiting for an upload
+    STATUS_DRAFT = 4;
 }
 
 message Video {
