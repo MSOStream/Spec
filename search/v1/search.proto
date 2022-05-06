@@ -4,6 +4,7 @@ package search.v1;
 
 import "google/api/annotations.proto";
 import public "videos/v1/videos.proto";
+import public "users/v1/users.proto";
 
 option go_package = "msostream/search/gen/search/v1";
 
@@ -15,8 +16,15 @@ message SearchVideosRequest {
     repeated string sort = 5;
 }
 
+// Denormalized view of a video entity
+message ExtendedVideo {
+    videos.v1.Video video = 1;
+    users.v1.PublicUserInfo author = 2;
+}
+
+// Contains the meilisearch response and metadata
 message SearchVideosResponse {
-    repeated videos.v1.Video videos = 1;
+    repeated ExtendedVideo videos = 1;
     uint64 offset = 2;
     uint64 limit = 3;
     uint64 nb_hits = 4;
