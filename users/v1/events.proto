@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package users.v1;
+
+message UserRegisteredEvent {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message UserEmailChangedEvent {
+    string email = 1;
+}
+
+message UserNameChangedEvent {
+    string name = 1;
+}
+
+message UserPasswordChanged {
+    string password = 1;
+}
