@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package videos.v1;
+
+option go_package = "msostream/search/gen/videos/v1";
+
+message VideoFinishedEvent {
+
+}
+
+message VideoCreatedEvent {
+    string id = 1;
+    string title = 2;
+    string description = 3;
+    string date = 4;
+    string author = 5;
+    Visibility visibility = 6;
+}
+
+message VideoTitleChangedEvent {
+    string title = 1;
+}
+
+message VideoDescriptionChanged {
+    string description = 1;
+}
+
+message VideoVisibilityChangedEnvent {
+    Visibility visibility = 1;
+}
+
+message VideoUploadedEvent {
+    string id = 1;
+}
+
+message VideoDeletedEvent {
+    string id = 1;
+}
+
+message VideoProcessedEvent {
+    string id = 1;
+}
+
+message VideoFinishedEvent {
+    string id = 1;
+}
