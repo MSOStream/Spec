@@ -22,7 +22,7 @@ message VideoDescriptionChangedEvent {
     string description = 1;
 }
 
-message VideoVisibilityChangedEnvent {
+message VideoVisibilityChangedEvent {
     Visibility visibility = 1;
 }
 
