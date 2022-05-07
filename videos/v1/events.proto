@@ -18,7 +18,7 @@ message VideoTitleChangedEvent {
     string title = 1;
 }
 
-message VideoDescriptionChanged {
+message VideoDescriptionChangedEvent {
     string description = 1;
 }
 
