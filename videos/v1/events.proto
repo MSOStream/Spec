@@ -3,10 +3,7 @@ syntax = "proto3";
 package videos.v1;
 
 option go_package = "msostream/search/gen/videos/v1";
-
-message VideoFinishedEvent {
-
-}
+import "videos/v1/videos.proto";
 
 message VideoCreatedEvent {
     string id = 1;
